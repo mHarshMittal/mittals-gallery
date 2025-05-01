@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -33,6 +33,10 @@ export default function BeforeAfter() {
   const [sliderPositions, setSliderPositions] = useState<number[]>(sampleComparisons.map(() => 50))
   const containerRefs = useRef<(HTMLDivElement | null)[]>([])
 
+  const setRef = useCallback((index: number) => (el: HTMLDivElement | null) => {
+    containerRefs.current[index] = el
+  }, [])
+
   return (
     <section className="py-16 px-4 bg-[#FFE8D6]">
       <div className="max-w-7xl mx-auto">
@@ -46,7 +50,7 @@ export default function BeforeAfter() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="relative aspect-square overflow-hidden rounded-lg shadow-lg"
-              ref={el => containerRefs.current[index] = el}
+              ref={setRef(index)}
             >
               <div className="relative w-full h-full">
                 <div className="absolute inset-0">
