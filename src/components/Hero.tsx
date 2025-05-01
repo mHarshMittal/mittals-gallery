@@ -5,7 +5,7 @@ import { FaWhatsapp, FaInstagram } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 const WHATSAPP_NUMBER = '8273001784'
-const INSTAGRAM_HANDLE = 'mittalsgallery'
+const INSTAGRAM_HANDLE = 'mittals_gallery'
 
 const Hero = () => {
   const [mounted, setMounted] = useState(false)
