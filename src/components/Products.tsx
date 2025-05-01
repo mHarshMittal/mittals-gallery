@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { products as productImages } from '../data/products';
+import productImages from '../data/products';
 
 const Products = () => {
   return (

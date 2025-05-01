@@ -60,4 +60,5 @@ const products = [
   'product-59.jpg',
 ];
 
-export { products }; 
+export { products };
+export default products; 
